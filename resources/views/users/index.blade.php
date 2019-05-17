@@ -33,7 +33,7 @@
             @foreach($users as $user)
 
                 <tr>
-                    <td>{{$user->id_user}}</td>
+                    <td>{{$user->id}}</td>
                     <td>{{$user->full_name}}</td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->password}}</td>
@@ -41,9 +41,9 @@
                     <td>{{$user->address}}</td>
                     <td>{{$user->role}}</td>
                     <td>
-                        <form action="{{route('users.destroy',$user->id_user)}}" method="post" role="form">
-                            <a href="{{route('users.show',$user->id_user)}}" class="btn btn-info">Show</a>
-                            <a href="{{route('users.edit',$user->id_user)}}" class="btn btn-primary">Edit</a>
+                        <form action="{{route('users.destroy',$user->id)}}" method="post" role="form">
+                            <a href="{{route('users.show',$user->id)}}" class="btn btn-info">Show</a>
+                            <a href="{{route('users.edit',$user->id)}}" class="btn btn-primary">Edit</a>
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="_method" value="DELETE">
                             <button type="submit" class="btn btn-danger">Delete</button>

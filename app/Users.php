@@ -15,7 +15,7 @@ class Users extends Model
     private $role;
 
     protected $table = 'users';
-    protected $primaryKey = 'id_user';
+    protected $primaryKey = 'id';
     protected $fillable = ['full_name', 'email', 'password', 'phone', 'address', 'role'];
 
     public function setName($full_name)
