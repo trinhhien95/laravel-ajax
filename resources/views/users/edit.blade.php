@@ -11,7 +11,7 @@
         </div>
     </div>
     <br>
-    <form action="{{route('users.update',$user->id_user)}}" method="post" role="form">
+    <form action="{{route('users.update',$user->id)}}" method="post" role="form">
         <input type="hidden" name="_token" value="{{csrf_token()}}">
         <input type="hidden" name="_method" value="PUT">
         <div class="row">
