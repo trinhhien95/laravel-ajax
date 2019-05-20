@@ -74,12 +74,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editCategory = Category::findOrFail($id);
+        $editCategory = Category::findOrFail($request->id);
         $editCategory->name = $request->name;
         $editCategory->description = $request->description;
         $editCategory->save();
-        $listCategory = Category::all();
-        return view('backend.category',['data' => $listCategory,'message' => 'Update Category Successfuly.']);
+        return redirect()->route('category.index');
+        // $listCategory = Category::all();
+        // return view('backend.category',['data' => $listCategory,'message' => 'Update Category Successfuly.']);
     }
 
     /**

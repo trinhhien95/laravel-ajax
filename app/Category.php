@@ -33,7 +33,7 @@ class Category extends Model
     public function setValuesCategory(Request $request)
     {
     	$this->setNameCategory($request->name)
-    		 ->setDescription($request->description);
-    	return $this;
-    }
+     ->setDescription($request->description);
+     return $this;
+ }
 }
