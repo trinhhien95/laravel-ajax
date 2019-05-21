@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $listCategory = Category::all();
+        $listCategory = Category::paginate(5);
         return view('backend.category',['data' => $listCategory]);
     }
 
@@ -39,6 +39,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+        'name' => 'required|unique:category|max:100',
+        'description' => 'required'
+        ]);
         $cate = Category::create($request->all());
         return response()->json($cate);
         //return redirect()->route('category.index',['message' => 'Add category Successfuly.']);
@@ -76,6 +80,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+        'id' => 'required|unique:category|min:1'
+        'name' => 'required|unique:category|max:100',
+        'description' => 'required'
+        ]);
         $editCategory = Category::findOrFail($request->id);
         $editCategory->name = $request->name;
         $editCategory->description = $request->description;

@@ -1,4 +1,4 @@
-@extends('backend.master')
+@extends('backend.extend')
 @section('content')
 <div class="container-fluid">
 	<h3>Category</h3>
@@ -34,6 +34,7 @@
 			@endforeach
 		</tbody>
 	</table>
+	{{ $data->links() }}
 </div>
 @include('backend.modalShow')
 @include('backend.modalCreate')

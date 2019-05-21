@@ -3,13 +3,15 @@
 #header{height:50px;line-height: 50px;background-color: black;}
 #header:after{clear:both;}
 #home{float: left;color: white;margin-left: 30px;}
+#home a{text-decoration: none;color: white;font-weight: bold;font-size: 20px;}
+#home a:hover{color:#33ccff;}
 #login{float: right;color:white;margin-right: 20px;}
+.login-right{float:left;margin-right:15px;}
 #content{clear: both;}
 #left-menu{float: left;width: 20%;}
-#left-menu ul li {list-style-type: none;
-	background-color:#33ccff;padding: 10px;}
+#left-menu ul li {list-style-type: none;padding: 5px;text-align: center;}
 #left-menu ul li:first{font-size: 20px;}
-#left-menu ul li a{text-decoration: none;color:black;}
-#left-menu ul li:hover{background-color: #0099ff;}
+#left-menu ul a{text-decoration: none;color:black;background-color:#33ccff;}
+#left-menu ul a:hover{background-color: #ff6666;color: white;}
 #right-content{;width: 80%;height: 500px;float: left;}
 /*#footer{clear: both; text-align: center;height:30px;line-height: 30px;}*/
