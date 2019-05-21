@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
 	<h3>Category</h3>
-	<input type="sublit" name="add" value="ADD" class="btn btn-primary" id="show-create-modal">
+	<input type="button" name="add" value="ADD" class="btn btn-primary" id="show-create-modal">
 	<table class="table table-hover" id="table_category">
 		<thead>
 			<tr class="table-primary">
@@ -36,7 +36,7 @@
 	</table>
 	{{ $data->links() }}
 </div>
-@include('backend.modalShow')
-@include('backend.modalCreate')
-@include('backend.modalEdit')
+@include('backend.category.modalShow')
+@include('backend.category.modalCreate')
+@include('backend.category.modalEdit')
 @endsection

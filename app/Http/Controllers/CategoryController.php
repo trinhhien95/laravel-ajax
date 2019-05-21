@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         //
         $listCategory = Category::paginate(5);
-        return view('backend.category',['data' => $listCategory]);
+        return view('backend.category.index',['data' => $listCategory]);
     }
 
     /**
@@ -80,11 +80,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-        'id' => 'required|unique:category|min:1'
-        'name' => 'required|unique:category|max:100',
-        'description' => 'required'
-        ]);
+        // $validatedData = $request->validate([
+        // 'id' => 'required|unique:category|min:1'
+        // 'name' => 'required|unique:category|max:100',
+        // 'description' => 'required'
+        // ]);
         $editCategory = Category::findOrFail($request->id);
         $editCategory->name = $request->name;
         $editCategory->description = $request->description;
