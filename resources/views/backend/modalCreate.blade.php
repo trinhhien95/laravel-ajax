@@ -8,8 +8,7 @@
 				<h4 class="modal-title">Add Category</h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
-			<form method="post" action="{{ route('category.store') }}" >
-				{{ csrf_field() }}
+			<form method="post" id="createForm">
 				<!-- Modal body -->
 				<div class="modal-body">
 					<div class="form-group">
@@ -24,7 +23,7 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<input type="submit" name="add" id="add_category" class="btn btn-success" value="ADD">
+					<input type="button" name="add" id="add-category" class="btn btn-success" value="ADD">
 				</div>
 			</form>
 		</div>

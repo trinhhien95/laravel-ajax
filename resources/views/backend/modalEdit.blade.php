@@ -8,10 +8,10 @@
 				<h4 class="modal-title">Edit Category</h4>
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
 			</div>
-			<form method="post" action="{{ route('category.update','id') }}">
-				{{ csrf_field() }}
+			<form method="post" id="editForm">
+				<!-- {{ csrf_field() }}
 				<input type="hidden" name="_method" value="PUT">
-				<input type="hidden" name="id" value="{{ $category->id }}"></input>
+				<input type="hidden" name="id" value=""></input> -->
 				<!-- Modal body -->
 				<div class="modal-body">
 					<div class="form-group">
@@ -26,7 +26,8 @@
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<input type="submit" name="edit" class="btn btn-success" value="EDIT">
+					<input type="button" name="edit" class="btn btn-success" id="update-category" value="EDIT">
+					<input type="hidden" id="category-id">
 				</div>
 			</form>
 		</div>

@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Category;
-use Illuminate\Http\Response;
 
-class CategoryController extends Controller
+class Category2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +15,6 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        $listCategory = Category::all();
-        return view('backend.category',['data' => $listCategory]);
     }
 
     /**
@@ -28,7 +25,6 @@ class CategoryController extends Controller
     public function create()
     {
         //
-        return redirect()->route('category.index');
     }
 
     /**
@@ -39,9 +35,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $cate = Category::create($request->all());
-        return response()->json($cate);
-        //return redirect()->route('category.index',['message' => 'Add category Successfuly.']);
+        $newCategory = new Category;
+        $data = $newCategory::create($request->all());
+        return response()->json($data);
     }
 
     /**
@@ -52,7 +48,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return response()->json($category);
     }
 
     /**
@@ -63,8 +60,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $data = Category::findOrFail($id);
-        return view('backend.editCategory',['data' => $data]);
+        $category = Category::find($id);
+        return response()->json($category);
     }
 
     /**
@@ -76,13 +73,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $editCategory = Category::findOrFail($request->id);
-        $editCategory->name = $request->name;
-        $editCategory->description = $request->description;
-        $editCategory->save();
-        return redirect()->route('category.index');
-        // $listCategory = Category::all();
-        // return view('backend.category',['data' => $listCategory,'message' => 'Update Category Successfuly.']);
+        $category = Category::find($id);
+        $category->update($request->all());
+        return response()->json($category);
     }
 
     /**
@@ -93,8 +86,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $deleteCategory = Category::findOrFail($id);
-        $deleteCategory->delete();
-        return redirect()->route('category.index',['message' => 'Delete category Successfuly.']);
+        $category = Category::find($id)->delete();
+        return response()->json($category);
     }
 }
