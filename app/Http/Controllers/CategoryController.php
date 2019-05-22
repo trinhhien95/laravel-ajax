@@ -40,7 +40,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-        'name' => 'required|unique:category|max:100',
+        'name' => 'required|unique:category',
         'description' => 'required'
         ]);
         $cate = Category::create($request->all());
@@ -80,11 +80,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $validatedData = $request->validate([
-        // 'id' => 'required|unique:category|min:1'
-        // 'name' => 'required|unique:category|max:100',
-        // 'description' => 'required'
-        // ]);
+        $validatedData = $request->validate([
+        'id' => 'required|unique:category|min:1',
+        'name' => 'required|unique:category',
+        'description' => 'required'
+        ]);
         $editCategory = Category::findOrFail($request->id);
         $editCategory->name = $request->name;
         $editCategory->description = $request->description;

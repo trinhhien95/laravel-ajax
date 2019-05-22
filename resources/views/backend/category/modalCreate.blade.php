@@ -13,11 +13,11 @@
 				<div class="modal-body">
 					<div class="form-group">
 						<label for="name">Name </label>
-						<input type="text" name="name" id="name_category" class="form-control" placeholder="Category Name">
+						<input type="text" name="name" id="name_category" class="form-control" placeholder="category name" required>
 					</div>
 					<div>
 						<label for="description">Description </label>
-						<input type="text" name="description" id="des_category" class="form-control" placeholder="Category Name">
+						<input type="text" name="description" id="des_category" class="form-control" placeholder="category description">
 					</div>
 				</div>
 

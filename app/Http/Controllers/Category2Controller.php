@@ -35,6 +35,10 @@ class Category2Controller extends Controller
      */
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+        'name' => 'required|unique:category',
+        'description' => 'required'
+        ]);
         $newCategory = new Category;
         $data = $newCategory::create($request->all());
         return response()->json($data);
@@ -73,6 +77,11 @@ class Category2Controller extends Controller
      */
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+        'id' => 'required|unique:category|min:1',
+        'name' => 'required|unique:category',
+        'description' => 'required'
+        ]);
         $category = Category::find($id);
         $category->update($request->all());
         return response()->json($category);
