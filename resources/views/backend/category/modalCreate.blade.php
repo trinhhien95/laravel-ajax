@@ -1,5 +1,5 @@
 <!-- The Modal Add Category -->
-<div class="modal" id="modalCreate">
+<div class="modal fade" id="modalCreate" role="dialog">
 	<div class="modal-dialog">
 		<div class="modal-content">
 

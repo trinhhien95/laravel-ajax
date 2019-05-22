@@ -1,5 +1,5 @@
 <!-- The Modal Show Category -->
-<div class="modal" id="modalShow">
+<div class="modal fade" id="modalShow">
 	<div class="modal-dialog">
 		<div class="modal-content">
 

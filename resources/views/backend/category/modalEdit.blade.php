@@ -1,5 +1,5 @@
 <!-- The Modal Edit Category -->
-<div class="modal" id="modalEdit">
+<div class="modal fade" id="modalEdit">
 	<div class="modal-dialog">
 		<div class="modal-content">
 
